@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+
+		
+	</title>
+</head>
+<body>
+
+<h1>Json oyrenirik</h1>
+<div id="fuad">
+	
+</div>
+
+
+
+<script type="text/javascript">
+	var data= '{"results":[{"gender":"female","name":{"title":"Miss","first":"Izzie","last":"Graham"},"location":{"street":{"number":1834,"name":"George Street"},"city":"Ardee","state":"Roscommon","country":"Ireland","postcode":93089,"coordinates":{"latitude":"25.5259","longitude":"12.8622"},"timezone":{"offset":"-6:00","description":"Central Time (US & Canada), Mexico City"}},"email":"izzie.graham@example.com","login":{"uuid":"7503230c-e657-445d-86e9-c0e034eebe61","username":"organicrabbit129","password":"syracuse","salt":"zuDruZHz","md5":"64093cf53e40cf6ef5f80e1dad731e55","sha1":"aeb508f2c333d1b2859d47ed0a82d064e46606fb","sha256":"9a3067e1cbce5cbc7ecc91f717417133a9c54f92addf0bf796273f25f9bc184e"},"dob":{"date":"1994-08-01T19:52:29.839Z","age":26},"registered":{"date":"2002-10-26T23:51:47.197Z","age":18},"phone":"031-897-9316","cell":"081-429-7643","id":{"name":"PPS","value":"9424610T"},"picture":{"large":"https://randomuser.me/api/portraits/women/24.jpg","medium":"https://randomuser.me/api/portraits/med/women/24.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/24.jpg"},"nat":"IE"}],"info":{"seed":"df8f85acd636db29","results":1,"page":1,"version":"1.3"}}';
+	var dataJSON = JSON.parse(data);
+	var person=dataJSON.results[0];
+	var output = document.querySelector('#fuad');
+
+	var html = person.name.first + ' ' + person.name.last;
+	html += '<img src="' + person.picture.thumbnail + '">';
+	output.innerHTML = html; 
+	console.log(person);
+
+	var str = JSON.stringify(dataJSON);
+	console.log(str);
+</script>
+</body>
+</html>
